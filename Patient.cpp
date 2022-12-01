@@ -26,6 +26,7 @@ Patient::Patient() {
     this->Name = "to be entered";
     this->phoneNum = "to be entered";
 
+
 // You need to complete this method.
 
 }
@@ -46,8 +47,16 @@ Patient::Patient(string aCareCard) {
     this->Name = "to be entered";
     this->phoneNum = "to be entered";
 
+
 // You need to complete this method.
 
+}
+Patient::Patient(const Patient& obj){
+    this->CareCard = obj.CareCard;
+    this->address = obj.address;
+    this->email = obj.email;
+    this->Name = obj.Name;
+    this->phoneNum = obj.phoneNum;
 }
 
 // All other parameterized constructors -> You need to implement these methods.
@@ -68,6 +77,7 @@ string Patient::getEmail() const{
 string Patient::getCareCard() const{
     return this->CareCard;
 }
+
 void Patient::setName(const string aName){
     this->Name = aName;
 }
@@ -80,13 +90,15 @@ void Patient::setPhone(const string aPhone){
 void Patient::setEmail(const string anEmail){
     this->email = anEmail;
 }
+
+
 // Overloaded Operators
 // Description: Comparison operator. Compares "this" Patient object with "rhs" Patient object.
 //              Returns true if both Patient objects have the same care card number.
 bool Patient::operator == (const Patient & rhs) {
 
 	// Compare both Patient objects
-	return this->careCard == rhs.getCareCard();
+	return this->CareCard == rhs.getCareCard();
 
 } // end of operator ==
 
@@ -96,7 +108,7 @@ bool Patient::operator == (const Patient & rhs) {
 bool Patient::operator > (const Patient & rhs) {
 
 	// Compare both Patient objects
-	return this->careCard > rhs.getCareCard();
+	return this->CareCard > rhs.getCareCard();
 
 } // end of operator >
 
@@ -106,7 +118,7 @@ bool Patient::operator > (const Patient & rhs) {
 bool Patient::operator < (const Patient & rhs) {
 
 	// Compare both Patient objects
-	return this->careCard < rhs.getCareCard();
+	return this->CareCard < rhs.getCareCard();
 
 } // end of operator <
 
@@ -114,8 +126,8 @@ bool Patient::operator < (const Patient & rhs) {
 // Description: Prints the content of "this".
 ostream & operator<<(ostream & os, const Patient & p) {
 
-	os << p.careCard << " - Patient: " << p.name << ", "
-	   << p.address << ", " << p.phone << ", " << p.email << endl;
+	os << p.CareCard << " - Patient: " << p.Name << ", "
+	   << p.address << ", " << p.phoneNum << ", " << p.email << endl;
 
 	return os;
 

@@ -51,6 +51,7 @@ public:
 	// Postcondition: If aCareCard does not have 10 digits, then care card is set to "0000000000".
 	//                All other data members set to "To be entered".
 	Patient(string aCareCard);
+	Patient(const Patient& obj);
 
 	// Add more parameterized constructors here!
 
@@ -70,6 +71,8 @@ public:
 	// Description: Returns patient's care card.
 	string getCareCard() const;
 
+
+
 	// Description: Sets the patient's name.
 	void setName(const string aName);
 
@@ -81,6 +84,8 @@ public:
 
 	// Description: Sets the patient's email.
 	void setEmail(const string anEmail);
+
+
 
 	// Overloaded Operators
 	// Description: Comparison operator. Compares "this" Patient object with "rhs" Patient object.
