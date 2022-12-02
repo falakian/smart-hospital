@@ -45,6 +45,35 @@ bool List::insert(const Patient& newElement){
     return true;
 
 }
+bool List::remove(const Patient& toBeRemoved){
+    if(head == nullptr){
+        cout << "cant delete!!!" << endl;
+        return false;
+    }
+    Node* nd = new Node(toBeRemoved);
+    Node* tmpb;
+    Node* tmp = this->head;
+    while(tmp != nullptr){
+        if(tmp->getData() == nd->getData()){
+            break;
+        }
+        tmpb = tmp;
+        tmp = tmp->getNext();
+    }
+    Node *komaki;
+    if(tmp == head){
+        komaki = head->getNext();
+        head->setNext(nullptr);
+        head = komaki;
+    }
+    else{
+        komaki = tmpb->getNext()->getNext();
+        tmpb->getNext()->setNext(nullptr);
+        tmpb->setNext(komaki);
+    }
+    this->elementCount--;
+    return true;
+}
 void List::printList(){
     if(this->head == nullptr){
         cout << "List is empty!!!!!" << endl;

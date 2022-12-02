@@ -11,7 +11,9 @@ int main(){
     bimar.insert(*par);
     bimar.insert(*pat);
     bimar.insert(*pay);
+    //bimar.remove(*pay);
+    int a = bimar.getElementCount();
     bimar.printList();
-
+    cout << a << endl;
     return 0;
 }
