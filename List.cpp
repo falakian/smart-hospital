@@ -74,6 +74,18 @@ bool List::remove(const Patient& toBeRemoved){
     this->elementCount--;
     return true;
 }
+Patient* List::search(const Patient& target){
+    Node* nd = new Node(target);
+    Node* tmp = this->head;
+    while(tmp != nullptr){
+        if(tmp->getData() == nd->getData()){
+            break;
+        }
+        tmp = tmp->getNext();
+    }
+    Patient *pt = new Patient(tmp->getData());
+    return pt;
+}
 void List::printList(){
     if(this->head == nullptr){
         cout << "List is empty!!!!!" << endl;

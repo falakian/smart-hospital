@@ -13,6 +13,9 @@ int main(){
     bimar.insert(*pay);
     //bimar.remove(*pay);
     int a = bimar.getElementCount();
+    Patient* s = bimar.search(*pay);
+    s->setEmail("saasddfa");
+    cout << *s << endl;
     bimar.printList();
     cout << a << endl;
     return 0;
