@@ -104,11 +104,11 @@ bool List::editInf(const Patient& target){
         return false;
     }
     int n;
-    cin >> n;
     string s;
     bool isTrue = true;
     while(isTrue){
         cout << "1-change name \n" << "2-change address \n" << "3-change phonenumber \n" << "4-change emailaddress \n" << "5-exit \n" << "please choose one of them \n";
+        cin >> n;
         switch(n){
         case 1:
             cout << "enter a new name: \n";

@@ -81,7 +81,12 @@ int main(){
             break;
 
         case 6:
-            hospital.printList();
+            if(hospital.getElementCount() != 0){
+                hospital.printList();
+            }
+            else{
+                cout << "Patient doesnt exist!!!" << endl;
+            }
             break;
         case 7:
             cout << "number of patients: " << hospital.getElementCount() << endl;
