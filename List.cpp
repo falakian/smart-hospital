@@ -47,7 +47,6 @@ bool List::insert(const Patient& newElement){
 }
 bool List::remove(const Patient& toBeRemoved){
     if(head == nullptr){
-        cout << "cant delete!!!" << endl;
         return false;
     }
     Node* nd = new Node(toBeRemoved);
@@ -59,6 +58,9 @@ bool List::remove(const Patient& toBeRemoved){
         }
         tmpb = tmp;
         tmp = tmp->getNext();
+    }
+    if(tmp == nullptr){
+        return false;
     }
     Node *komaki;
     if(tmp == head){
@@ -83,8 +85,58 @@ Patient* List::search(const Patient& target){
         }
         tmp = tmp->getNext();
     }
+    if(tmp == nullptr){
+        return nullptr;
+    }
     Patient *pt = new Patient(tmp->getData());
     return pt;
+}
+bool List::editInf(const Patient& target){
+    Node* nd = new Node(target);
+    Node* tmp = this->head;
+    while(tmp != nullptr){
+        if(tmp->getData() == nd->getData()){
+            break;
+        }
+        tmp = tmp->getNext();
+    }
+    if(tmp == nullptr){
+        return false;
+    }
+    int n;
+    cin >> n;
+    string s;
+    bool isTrue = true;
+    while(isTrue){
+        cout << "1-change name \n" << "2-change address \n" << "3-change phonenumber \n" << "4-change emailaddress \n" << "5-exit \n" << "please choose one of them \n";
+        switch(n){
+        case 1:
+            cout << "enter a new name: \n";
+            cin >> s;
+            tmp->getDataByReference().setName(s);
+            break;
+        case 2:
+            cout << "enter a new address: \n";
+            cin >> s;
+            tmp->getDataByReference().setAddress(s);
+            break;
+        case 3:
+            cout << "enter a new phonenumber: \n";
+            cin >> s;
+            tmp->getDataByReference().setPhone(s);
+            break;
+        case 4:
+            cout << "enter a new emailaddress: \n";
+            cin >> s;
+            tmp->getDataByReference().setEmail(s);
+            break;
+        case 5:
+            isTrue = false;
+            break;
+        }
+    }
+    return true;
+
 }
 void List::printList(){
     if(this->head == nullptr){
@@ -98,6 +150,22 @@ void List::printList(){
     }
     return;
 }
+void List::removeAll(){
+    Node* komaki;
+    Node* tmp = this->head;
+    while(tmp != nullptr){
+        komaki = tmp->getNext();
+        delete tmp;
+        tmp = komaki;
+    }
+    this->elementCount = 0;
+}
 List::~List(){
-
+    Node* tmp = this->head;
+    while (tmp != nullptr) {
+        Node* tmp2 = tmp->getNext();
+        delete tmp;
+        tmp = nullptr;
+        tmp = tmp2;
+    }
 }

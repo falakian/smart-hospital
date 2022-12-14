@@ -51,6 +51,18 @@ Patient::Patient(string aCareCard) {
 // You need to complete this method.
 
 }
+Patient::Patient(string aCareCard, string name, string addr, string phNum, string Email){
+     if(aCareCard.size() == 10){
+        this->CareCard = aCareCard;
+    }
+    else{
+        this->CareCard = "0000000000";
+    }
+    this->address = addr;
+    this->email = Email;
+    this->Name = name;
+    this->phoneNum = phNum;
+}
 Patient::Patient(const Patient& obj){
     this->CareCard = obj.CareCard;
     this->address = obj.address;

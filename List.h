@@ -71,6 +71,7 @@ public:
 	//              Returns a pointer to the element if found,
 	//              otherwise, returns NULL.
 	Patient* search(const Patient& target);
+	bool editInf(const Patient& target);
 
 	// Description: Prints all elements stored in List by descending order of search key.
 	void printList();

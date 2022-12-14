@@ -13,8 +13,9 @@ public:
     Node(Patient ptn);
     ~Node();
     Patient getData();
+    Patient& getDataByReference();
     Node* getNext();
-    //void setData(const Patient ptn);
+    //void setData(const Patient &ptn);
     void setNext(Node* nxt);
 };
 

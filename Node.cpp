@@ -15,7 +15,10 @@ Node::~Node(){
     this->next = nullptr;
 }
 Patient Node::getData(){
-    return this->data;
+    return data;
+}
+Patient& Node::getDataByReference(){
+    return data;
 }
 Node* Node::getNext(){
     return this->next;
