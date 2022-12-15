@@ -51,7 +51,10 @@ public:
 	// Postcondition: If aCareCard does not have 10 digits, then care card is set to "0000000000".
 	//                All other data members set to "To be entered".
 	Patient(string aCareCard);
+    // Add more parameterized constructors here!
+    // this is parameterized constructor for Patient class
 	Patient(string aCareCard, string name, string addr, string phNum, string Email);
+	// this is copy constructor for Patient class
 	Patient(const Patient& obj);
 
 	// Add more parameterized constructors here!

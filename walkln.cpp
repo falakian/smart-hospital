@@ -70,7 +70,7 @@ int main(){
             obj = new Patient(carecard);
             if(hospital.search(*obj) != nullptr){
                 cout << "patient is founded" << endl;
-                cout << hospital.search(*obj) << endl;
+                cout << *(hospital.search(*obj)) << endl;
             }
             else{
                 cout << "patient is not founded" << endl;

@@ -31,10 +31,9 @@ private:
  */
 
 	//(For you to fill)                  // constant MAX_ELEMENTS
-	//(For you to fill)                 // Data structure of elements
+    Node *head;                         // Data structure of elements
 	int elementCount;                  // Number of elements in the data structure
 	int capacity;                      // Actual maximum capacity of data structure
-    Node *head;
 public:
 
 /*
