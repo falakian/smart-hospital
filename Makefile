@@ -1,16 +1,16 @@
-all: wi
 
-wi: walkIn.o List.o Patient.o
-	g++ -Wall -o wi walkIn.o List.o Patient.o
+
+output: walkIn.o List.o Patient.o
+	g++  walkIn.o List.o Patient.o -o output
 
 walkIn.o: walkIn.cpp List.h Patient.h
-	g++ -Wall -std=c++03 -c walkIn.cpp
+	g++  -c walkIn.cpp
 
 List.o: List.h List.cpp
-	g++ -Wall -std=c++03 -c List.cpp
+	g++  -c List.cpp
 
 Patient.o: Patient.h Patient.cpp
-	g++ -Wall -std=c++03 -c Patient.cpp
+	g++  -c Patient.cpp
 
 clean:
-	rm -f wi *.o
+	rm  *.o output 

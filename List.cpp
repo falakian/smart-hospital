@@ -85,7 +85,7 @@ Patient* List::search(const Patient& target){
         }
         tmp = tmp->getNext();
     }
-    if(tmp == nullptr){
+    if(tmp == nullptr || elementCount == 0){
         return nullptr;
     }
     Patient *pt = new Patient(tmp->getData());
@@ -100,7 +100,7 @@ bool List::editInf(const Patient& target){
         }
         tmp = tmp->getNext();
     }
-    if(tmp == nullptr){
+    if(tmp == nullptr || elementCount == 0){
         return false;
     }
     int n;
@@ -156,6 +156,7 @@ void List::removeAll(){
     while(tmp != nullptr){
         komaki = tmp->getNext();
         delete tmp;
+        tmp = nullptr;
         tmp = komaki;
     }
     this->elementCount = 0;
@@ -168,4 +169,5 @@ List::~List(){
         tmp = nullptr;
         tmp = tmp2;
     }
+    elementCount = 0;
 }

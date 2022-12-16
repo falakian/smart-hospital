@@ -13,7 +13,7 @@ int main(){
         cout << "1-add a patient \n" << "2-remove a patient \n" << "3-edit an information of patient \n" << "4-search a patient \n" << "5-remove all \n" << "6-print list of patients \n" << "7-number of Patients \n"<< "8-exit \n" << "please choose one of them: \n";
         cin >> choice;
         switch(choice){
-        case 1:
+        case 1:{
             cout << "enter a carecard number please: " << endl;
             cin >> carecard;
             int choice1;
@@ -41,6 +41,7 @@ int main(){
                 cout << "patient is already existed" << endl;
             }
             break;
+        }
 
         case 2:
             cout << "enter a carecard number please: " << endl;
